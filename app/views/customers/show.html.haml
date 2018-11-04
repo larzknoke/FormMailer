@@ -1,0 +1,11 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @customer.name
+%h5 Forms:
+%ul#selector
+  - @customer.forms.each  do |form|
+    %li= link_to "#{form.name}, #{form.id}", form
+= link_to 'Edit', edit_customer_path(@customer)
+|
+= link_to 'Back', customers_path
