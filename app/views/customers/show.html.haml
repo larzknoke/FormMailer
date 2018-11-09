@@ -2,6 +2,9 @@
 %p
   %strong Name:
   = @customer.name
+%p
+  %strong API-Key:
+  = @customer.apikey
 %h5 Forms:
 %ul#selector
   - @customer.forms.each  do |form|

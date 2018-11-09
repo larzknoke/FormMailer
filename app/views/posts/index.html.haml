@@ -1,18 +1,22 @@
 %p#notice= notice
 %h1 Listing Posts
-%table
+%table.table
   %thead
     %tr
+      %th Kunde
+      %th Form
       %th Sender
       %th Content
       %th{:colspan => "3"}
   %tbody
     - @posts.each do |post|
       %tr
+        %td= post.form.customer.name
+        %td= post.form.name
         %td= post.sender
         %td= post.content
         %td= link_to 'Show', post
         %td= link_to 'Edit', edit_post_path(post)
         %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Post', new_post_path
+= link_to 'New Post', new_post_path, :class => "btn btn-success"

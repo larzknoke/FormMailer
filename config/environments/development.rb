@@ -38,4 +38,19 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+
+
+  config.action_mailer.smtp_settings = {
+    :address        => 'send.one.com',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV["ONE_USERNAME"],
+    :password       => ENV["ONE_PASSWORD"],
+    :domain         => ENV["SMTP_DOMAIN"]
+  }
 end

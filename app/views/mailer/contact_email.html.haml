@@ -1,0 +1,15 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h3
+      Form:
+      = @form_name
+    %h3
+      Inhalt:
+    - @text.each do |k, v|
+      %tr
+        %td{:valign => "top"}
+          %strong= "#{k}:"
+        %td
+          = "#{v}"

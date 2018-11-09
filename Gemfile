@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rack-cors'
 gem "haml-rails", "~> 1.0"
 gem 'bootstrap', '~> 4.1.3'
+gem "figaro"
 
 
 
