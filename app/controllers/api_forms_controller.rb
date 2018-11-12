@@ -30,7 +30,7 @@ class ApiFormsController < ApplicationController
       post.save
 
 
-      render :json => post.content, :status => 200
+      render :json => {success: true}, :status => 200
     else
       render :json => {error: "unauthorized"}, :status => 401
     end

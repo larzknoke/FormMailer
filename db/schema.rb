@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20181103205416) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "customers", force: :cascade do |t|
     t.string   "name"
     t.string   "apikey"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20181103205416) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "forms", ["customer_id"], name: "index_forms_on_customer_id"
+  add_index "forms", ["customer_id"], name: "index_forms_on_customer_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "sender"
@@ -39,6 +42,6 @@ ActiveRecord::Schema.define(version: 20181103205416) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "posts", ["form_id"], name: "index_posts_on_form_id"
+  add_index "posts", ["form_id"], name: "index_posts_on_form_id", using: :btree
 
 end

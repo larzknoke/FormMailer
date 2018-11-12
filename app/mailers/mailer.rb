@@ -6,7 +6,7 @@ class Mailer < ActionMailer::Base
     @form_name = post.form.name
     @text = JSON.parse(post.content)
     @to = post.form.receiver
-    mail(to: @to, subject: "Neue Nachricht | Kontaktformular")
+    mail(to: @to, subject: "Neue Nachricht | #{post.form.name}")
   end
 
 end
