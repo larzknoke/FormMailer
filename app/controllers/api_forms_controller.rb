@@ -13,7 +13,7 @@ class ApiFormsController < ApplicationController
   def create
     form = Form.find(params[:id])
 
-    if form.customer.apikey = request.headers["API-KEY"]
+    if form.customer.apikey == request.headers["API-KEY"]
       content = params[:content].to_json
       post = Post.new(:sender => request.remote_ip, :content => content)
 
